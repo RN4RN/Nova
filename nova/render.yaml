@@ -1,7 +1,25 @@
 services:
   - type: web
-    name: nova
+    name: nova-backend
     env: node
     rootDir: backend
-    buildCommand: "npm install && cd ../frontend && npm install && npm run build"
-    startCommand: "npm start"
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 4000
+      # Aquí puedes agregar tus otras variables del backend (DB_URL, etc.)
+
+  - type: web
+    name: nova-frontend
+    env: node
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: REACT_APP_API_URL
+        value: https://nova-backend.onrender.com  # <-- cuando el backend esté desplegado, reemplaza con su URL real
