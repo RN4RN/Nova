@@ -1,6 +1,14 @@
 {
+  "name": "nova",
+  "version": "1.0.0",
+  "private": true,
   "dependencies": {
     "chalk": "^5.6.2",
     "firebase": "^12.4.0"
+  },
+  "scripts": {
+    "install": "cd backend && npm install && cd ../frontend && npm install",
+    "build": "cd frontend && npm run build",
+    "start": "cd backend && npm start"
   }
 }
