@@ -1,0 +1,168 @@
+/* src/App.css */
+
+/* Variables de color */
+:root {
+  --primary-dark-grey: #333333; /* Un negro oscuro pero no puro */
+  --secondary-medium-grey: #474747; /* Un gris medio para hover o fondo de elementos */
+  --text-color-light: #ecf0f1; /* Color de texto claro para contraste */
+  --accent-green: #00ce2d; /* Color de acento para el botón de login/activo */
+  --accent-red: #e74c3c; /* Color para el botón de cerrar sesión */
+}
+
+.navbar {
+  background-color: var(--primary-dark-grey); /* Usamos el nuevo negro oscuro */
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+  font-family: 'Roboto', sans-serif; /* Fuente profesional */
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo {
+  height: 40px; /* Tamaño del logo */
+  margin-right: 1rem;
+  transition: transform 0.3s ease; /* Efecto al pasar el ratón */
+}
+
+.navbar-logo:hover {
+  transform: scale(1.05);
+}
+
+.navbar-brand {
+  color: var(--text-color-light);
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-decoration: none; /* Asegura que no tenga subrayado por ser un Link */
+}
+
+.navbar-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1.5rem; /* Espacio entre los enlaces */
+}
+
+.navbar-links li {
+  position: relative; /* Para la animación del subrayado */
+}
+
+.navbar-links a,
+.navbar-links button {
+  color: var(--text-color-light);
+  text-decoration: none;
+  font-size: 1.05rem;
+  padding: 0.5rem 0;
+  display: flex; /* Para alinear el icono y el texto */
+  align-items: center;
+  transition: color 0.3s ease;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif;
+}
+
+.navbar-links a .icon,
+.navbar-links button .icon {
+  margin-right: 0.5rem; /* Espacio entre el icono y el texto */
+  font-size: 1.2rem; /* Tamaño del icono */
+}
+
+.navbar-links a:hover,
+.navbar-links button:hover {
+  color: var(--accent-green); /* Resalta en verde al pasar el ratón */
+}
+
+/* Subrayado animado para enlaces */
+.navbar-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--accent-green);
+  transition: width 0.3s ease;
+}
+
+.navbar-links a:hover::after,
+.navbar-links a.active-link::after {
+  width: 100%;
+}
+
+.active-link {
+  color: var(--accent-green) !important; /* Color para el enlace activo */
+  font-weight: bold;
+}
+
+/* Estilos específicos para botones */
+.login-link {
+  background-color: var(--accent-green);
+  padding: 0.6rem 1.2rem;
+  border-radius: 5px;
+  color: white !important; /* Asegura que el texto sea blanco */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.login-link:hover {
+  background-color: #27ae60; /* Tono más oscuro al pasar el ratón */
+  transform: translateY(-2px);
+  color: white !important; /* Mantiene el texto blanco en hover */
+}
+
+.logout-btn {
+  background-color: var(--accent-red);
+  padding: 0.6rem 1.2rem;
+  border-radius: 5px;
+  color: white !important;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.logout-btn:hover {
+  background-color: #c0392b;
+  transform: translateY(-2px);
+  color: white !important;
+}
+
+/* Media Queries para responsividad (opcional pero recomendado) */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-links {
+    flex-direction: column;
+    width: 100%;
+    margin-top: 1rem;
+    gap: 0.5rem;
+  }
+
+  .navbar-links li {
+    width: 100%;
+  }
+
+  .navbar-links a,
+  .navbar-links button {
+    width: 100%;
+    text-align: left;
+    padding: 0.8rem 1rem;
+    background-color: var(--secondary-medium-grey); /* También ajustado a gris */
+    border-radius: 5px;
+  }
+
+  .navbar-links a::after {
+    display: none; /* Oculta el subrayado animado en móvil */
+  }
+
+  .active-link {
+    background-color: var(--accent-green);
+    color: white !important;
+  }
+}

@@ -1,0 +1,115 @@
+/* Home2.css - Tema Oscuro Suave */
+
+body {
+  background-color: #282c34; /* Fondo principal de la aplicación, un gris oscuro */
+  color: #e0e0e0; /* Color de texto general para contraste */
+}
+
+.home-container-logged-in {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h1 {
+  color: #61dafb; /* Un azul claro/cyan para los títulos principales, haciendo referencia a React */
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2.5em; /* Un poco más grande para destacar */
+}
+
+p {
+  color: #a0a0a0; /* Un gris más claro para el texto de párrafo */
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 1.1em;
+}
+
+h2 {
+  color: #28a745; /* Verde vibrante para subtítulos, mantiene el tema de farmacia */
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 25px;
+  font-size: 2em;
+  border-bottom: 2px solid #28a745; /* Línea inferior para destacar */
+  padding-bottom: 10px;
+  display: inline-block; /* Para que la línea se ajuste al texto */
+}
+
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px; /* Más espacio entre tarjetas para una mejor lectura */
+  margin-bottom: 50px;
+}
+
+.category-card {
+  background-color: #3a3f47; /* Fondo de tarjeta más oscuro que el body */
+  border: 1px solid #4d525b; /* Borde sutil para definir la tarjeta */
+  border-radius: 10px; /* Bordes más redondeados */
+  padding: 25px; /* Más padding */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada para profundidad */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  display: flex; /* Para un mejor control del contenido interno */
+  flex-direction: column;
+}
+
+.category-card:hover {
+  transform: translateY(-8px); /* Elevación más notable */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Sombra aún más profunda al pasar el ratón */
+  background-color: #4a4f57; /* Ligero cambio de fondo al pasar el ratón */
+}
+
+.category-card h3 {
+  color: #28a745; /* Verde vibrante para el título de la categoría */
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 1.5em;
+  text-align: left;
+}
+
+.category-card p {
+  color: #c0c0c0; /* Gris claro para la descripción */
+  font-size: 1em;
+  line-height: 1.6;
+  text-align: left;
+  margin-bottom: 0;
+  flex-grow: 1; /* Para que ocupe el espacio disponible y empuje el contenido hacia arriba */
+}
+
+/* Estilos para home2-features y feature-card (adaptados al tema oscuro) */
+.home2-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  margin-top: 50px;
+}
+
+.feature-card {
+  background-color: #3a3f47; /* Mismo fondo que las tarjetas de categoría */
+  border: 1px solid #4d525b;
+  border-radius: 10px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.3s ease-in-out;
+}
+
+.feature-card:hover {
+  background-color: #4a4f57;
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.feature-card h3 {
+  color: #61dafb; /* Azul claro para los títulos de las funcionalidades */
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 1.4em;
+}
+
+.feature-card p {
+  color: #a0a0a0;
+  font-size: 1em;
+  margin-bottom: 0;
+}

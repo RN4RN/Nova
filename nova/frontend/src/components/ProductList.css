@@ -1,0 +1,218 @@
+/* ProductList.css */
+
+/* Contenedor principal de la lista de productos */
+.auth-container {
+  background-color: #2e2e2e; /* Un gris oscuro para el fondo */
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  max-width: 1200px;
+  margin: 40px auto;
+  color: #e0e0e0; /* Texto claro */
+}
+
+/* Título de la sección */
+.form-title {
+  font-size: 2.2em;
+  color: #4CAF50; /* Verde principal para el título */
+  margin-bottom: 30px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+}
+
+.form-title .icon {
+  font-size: 1.8em;
+  color: #4CAF50;
+}
+
+/* Contenedor de botones de acciones (Agregar, Categorías, Proveedores) */
+.product-list-actions {
+  display: flex;
+  justify-content: flex-start; /* Alinea los botones a la izquierda */
+  flex-wrap: wrap; /* Permite que los botones salten de línea en pantallas pequeñas */
+  gap: 15px;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #444; /* Separador sutil */
+}
+
+/* Estilo base para los botones de acción */
+.add-product-button,
+.manage-categories-button,
+.manage-suppliers-button {
+  background-color: #4CAF50; /* Verde principal */
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1em;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.add-product-button:hover,
+.manage-categories-button:hover,
+.manage-suppliers-button:hover {
+  background-color: #45a049; /* Verde un poco más oscuro al pasar el ratón */
+  transform: translateY(-2px);
+}
+
+.product-list-actions .icon-small {
+  font-size: 1.1em;
+}
+
+/* Estilos para la tabla */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto; /* Permite desplazamiento horizontal en pantallas pequeñas */
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: #3a3a3a; /* Fondo más claro para la tabla */
+  border-radius: 8px;
+  overflow: hidden; /* Asegura que los bordes redondeados se apliquen */
+}
+
+.data-table th,
+.data-table td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #444; /* Bordes de fila más sutiles */
+  color: #e0e0e0; /* Texto claro */
+}
+
+.data-table th {
+  background-color: #4CAF50; /* Encabezados en verde */
+  color: white;
+  font-weight: 600;
+  font-size: 1.05em;
+  position: sticky; /* Fija los encabezados al hacer scroll */
+  top: 0;
+  z-index: 1;
+}
+
+/* Estilo para los iconos en los encabezados de la tabla */
+.data-table th .icon-small {
+  margin-right: 6px;
+  font-size: 1em;
+}
+
+/* Filas alternas para mejor legibilidad */
+.data-table tbody tr:nth-child(even) {
+  background-color: #353535; /* Fondo ligeramente diferente para filas pares */
+}
+
+.data-table tbody tr:hover {
+  background-color: #4c4c4c; /* Resaltar fila al pasar el ratón */
+  cursor: pointer;
+}
+
+/* Celdas de acciones */
+.actions-cell {
+  white-space: nowrap; /* Evita que los botones de acción se rompan */
+}
+
+/* Botones de acción dentro de la tabla */
+.action-button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  padding: 8px 10px;
+  margin: 0 5px;
+  cursor: pointer;
+  font-size: 1.1em;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none; /* Para los Link */
+}
+
+.edit-button {
+  color: #2196F3; /* Azul para editar */
+}
+
+.edit-button:hover {
+  background-color: rgba(33, 150, 243, 0.2);
+  transform: scale(1.1);
+}
+
+.delete-button {
+  color: #F44336; /* Rojo para eliminar */
+}
+
+.delete-button:hover {
+  background-color: rgba(244, 67, 54, 0.2);
+  transform: scale(1.1);
+}
+
+/* Mensaje "No hay productos" */
+.data-table td[colSpan="11"] {
+  text-align: center;
+  font-style: italic;
+  color: #bbb;
+  padding: 20px;
+}
+
+/* Media Queries para responsividad */
+@media (max-width: 768px) {
+  .auth-container {
+    padding: 20px;
+    margin: 20px auto;
+  }
+
+  .form-title {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+  }
+
+  .product-list-actions {
+    flex-direction: column; /* Apila los botones verticalmente */
+    align-items: stretch; /* Estira los botones para ocupar el ancho */
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .add-product-button,
+  .manage-categories-button,
+  .manage-suppliers-button {
+    width: 100%; /* Hacen que los botones ocupen el 100% del ancho */
+    justify-content: center;
+  }
+
+  .data-table th,
+  .data-table td {
+    padding: 10px;
+    font-size: 0.9em;
+  }
+
+  .action-button {
+    padding: 6px 8px;
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-title {
+    font-size: 1.5em;
+  }
+
+  .data-table th,
+  .data-table td {
+    font-size: 0.85em;
+  }
+}
